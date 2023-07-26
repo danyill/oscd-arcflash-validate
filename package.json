@@ -1,13 +1,13 @@
 {
-  "name": "oscd-replace-ieds",
+  "name": "oscd-arcflash-validate",
   "description": "Webcomponent for exporting the Communication section of IEC 61850 SCL files",
   "license": "Apache-2.0",
   "author": "Daniel Mulholland",
   "version": "0.0.0",
-  "main": "dist/oscd-replace-ieds.js",
-  "module": "dist/oscd-replace-ieds.js",
+  "main": "dist/oscd-arcflash-validate.js",
+  "module": "dist/oscd-arcflash-validate.js",
   "exports": {
-    ".": "./dist/oscd-replace-ieds.js"
+    ".": "./dist/oscd-arcflash-validate.js"
   },
   "scripts": {
     "start": "npm run build && concurrently -k -r \"tsc -b --watch --preserveWatchOutput\" \"wds\"",
@@ -21,7 +21,7 @@
     "build": "npm run extract && npm run localize && npm run compile",
     "compile": "tsc -b",
     "bundle": "rimraf dist && rollup -c rollup.config.js",
-    "doc": "npm run analyze -- --exclude dist && typedoc --out dist/doc oscd-replace-ieds.ts",
+    "doc": "npm run analyze -- --exclude dist && typedoc --out dist/doc oscd-arcflash-validate.ts",
     "prepublish": "npm run lint && npm run build && npm run doc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
