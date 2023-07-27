@@ -10967,6 +10967,13 @@ class ReplaceIEDs extends s$1 {
             // console.log(currentIedName);
             // let connectionCount = 0;
             const cbUsage = new Map();
+            const firstExtRef = Array.from(currentIed.querySelectorAll(':scope LN > Inputs > ExtRef, :scope LN0 > Inputs > ExtRef')).filter(candidate => {
+                var _a;
+                return ((_a = candidate.getAttribute('intAddr')) === null || _a === void 0 ? void 0 : _a.slice(0, 2)) === 'VB' &&
+                    candidate.hasAttribute('intAddr') &&
+                    parseInt(candidate.getAttribute('intAddr').slice(2, 5), 10) < 20;
+            })[0];
+            const firstsrcCBName = firstExtRef.getAttribute('srcCBName');
             Array.from(currentIed.querySelectorAll(':scope LN > Inputs > ExtRef, :scope LN0 > Inputs > ExtRef'))
                 .filter(candidate => {
                 var _a;
@@ -10977,7 +10984,7 @@ class ReplaceIEDs extends s$1 {
                 .forEach(extRef => {
                 const parentInputs = extRef.parentElement;
                 const addressNumber = parseInt(extRef.getAttribute('intAddr').slice(2, 5), 10);
-                const srcCBName = extRef.getAttribute('srcCBName');
+                const srcCBName = firstsrcCBName;
                 const selectedIedName = extRef.getAttribute('iedName');
                 if (!(extRef.getAttribute('serviceType') === 'GOOSE' &&
                     extRef.getAttribute('srcLDInst') &&
