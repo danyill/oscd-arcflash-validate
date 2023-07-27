@@ -11096,6 +11096,9 @@ class ReplaceIEDs extends s$1 {
                     const newValue = existingValue ? existingValue + 1 : 1;
                     cbUsage.set(cbId, newValue);
                 }
+                else {
+                    console.log(extRef, hasTripInformation, hasTripGuardInformation, hasInvertedTripGuardInformation, hasGooseTestInformation, hasBusResetInformation);
+                }
             });
             cbUsage.forEach((count, iedName) => {
                 newGraphVizOutput += `\n${iedName} [label="${iedName} - ${count}"]`;
