@@ -74,7 +74,7 @@ export default class ReplaceIEDs extends LitElement {
       ).filter(
         candidate =>
           candidate.getAttribute('intAddr')?.slice(0, 2) === 'VB' &&
-          candidate.hasAttribute('intAddr') &&
+          candidate.hasAttribute('iedName') &&
           parseInt(candidate.getAttribute('intAddr')!.slice(2, 5), 10) < 20
       )[0];
 
