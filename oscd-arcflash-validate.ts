@@ -229,6 +229,7 @@ export default class ReplaceIEDs extends LitElement {
             cbUsage.set(cbId, newValue);
           } else {
             console.log(
+              currentIedName,
               extRef,
               hasTripInformation,
               hasTripGuardInformation,
