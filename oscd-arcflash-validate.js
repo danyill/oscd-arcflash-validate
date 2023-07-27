@@ -11097,7 +11097,7 @@ class ReplaceIEDs extends s$1 {
                     cbUsage.set(cbId, newValue);
                 }
                 else {
-                    console.log(extRef, hasTripInformation, hasTripGuardInformation, hasInvertedTripGuardInformation, hasGooseTestInformation, hasBusResetInformation);
+                    console.log(currentIedName, extRef, hasTripInformation, hasTripGuardInformation, hasInvertedTripGuardInformation, hasGooseTestInformation, hasBusResetInformation);
                 }
             });
             cbUsage.forEach((count, iedName) => {
