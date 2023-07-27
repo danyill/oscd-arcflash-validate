@@ -227,6 +227,15 @@ export default class ReplaceIEDs extends LitElement {
             const existingValue = cbUsage.get(cbId);
             const newValue = existingValue ? existingValue + 1 : 1;
             cbUsage.set(cbId, newValue);
+          } else {
+            console.log(
+              extRef,
+              hasTripInformation,
+              hasTripGuardInformation,
+              hasInvertedTripGuardInformation,
+              hasGooseTestInformation,
+              hasBusResetInformation
+            );
           }
         });
       cbUsage.forEach((count, iedName) => {
