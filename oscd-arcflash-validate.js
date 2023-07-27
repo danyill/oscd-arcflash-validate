@@ -10970,7 +10970,7 @@ class ReplaceIEDs extends s$1 {
             const firstExtRef = Array.from(currentIed.querySelectorAll(':scope LN > Inputs > ExtRef, :scope LN0 > Inputs > ExtRef')).filter(candidate => {
                 var _a;
                 return ((_a = candidate.getAttribute('intAddr')) === null || _a === void 0 ? void 0 : _a.slice(0, 2)) === 'VB' &&
-                    candidate.hasAttribute('intAddr') &&
+                    candidate.hasAttribute('iedName') &&
                     parseInt(candidate.getAttribute('intAddr').slice(2, 5), 10) < 20;
             })[0];
             const firstsrcCBName = firstExtRef === null || firstExtRef === void 0 ? void 0 : firstExtRef.getAttribute('srcCBName');
