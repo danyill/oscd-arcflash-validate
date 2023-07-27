@@ -78,7 +78,7 @@ export default class ReplaceIEDs extends LitElement {
           parseInt(candidate.getAttribute('intAddr')!.slice(2, 5), 10) < 20
       )[0];
 
-      const firstsrcCBName = firstExtRef.getAttribute('srcCBName');
+      const firstsrcCBName = firstExtRef?.getAttribute('srcCBName');
 
       Array.from(
         currentIed.querySelectorAll(
