@@ -67,6 +67,19 @@ export default class ReplaceIEDs extends LitElement {
 
       const cbUsage = new Map();
 
+      const firstExtRef = Array.from(
+        currentIed.querySelectorAll(
+          ':scope LN > Inputs > ExtRef, :scope LN0 > Inputs > ExtRef'
+        )
+      ).filter(
+        candidate =>
+          candidate.getAttribute('intAddr')?.slice(0, 2) === 'VB' &&
+          candidate.hasAttribute('intAddr') &&
+          parseInt(candidate.getAttribute('intAddr')!.slice(2, 5), 10) < 20
+      )[0];
+
+      const firstsrcCBName = firstExtRef.getAttribute('srcCBName');
+
       Array.from(
         currentIed.querySelectorAll(
           ':scope LN > Inputs > ExtRef, :scope LN0 > Inputs > ExtRef'
@@ -85,7 +98,7 @@ export default class ReplaceIEDs extends LitElement {
             10
           );
 
-          const srcCBName = extRef.getAttribute('srcCBName');
+          const srcCBName = firstsrcCBName;
           const selectedIedName = extRef.getAttribute('iedName');
 
           if (
